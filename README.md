@@ -33,4 +33,4 @@ Visit [The TLA Home Page](http://research.microsoft.com/en-us/um/people/lamport/
 * Docker mounted the host's working directory in the container at the same path.
 
 ## WHAT IF IT DOESN'T WORK?
-Open an [issue](https://github.com/hackenfreude/docker-tlatoolbox-1.5.2/issues/new).
+Open an [issue](https://github.com/keikun555/docker-tlatoolbox/issues).
