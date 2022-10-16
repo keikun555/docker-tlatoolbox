@@ -21,12 +21,13 @@ Visit [The TLA Home Page](http://research.microsoft.com/en-us/um/people/lamport/
 ## HOW TO RUN IT?
 1. Make sure you're on a system running [X](https://en.wikipedia.org/wiki/X_Window_System).
 2. Disable X access control (don't do this on a public-facing machine): `$ xhost +`
-3. `docker-compose up`
-6. You should see the TLA+ splash screen and eventually the TLA Toolbox.
-7. Use the TLA Toolbox menu: File/Open Spec/Add New Spec.
-8. Enter /root/specs/{foo}.tla as the root-module name. The specification name should auto-complete to {foo}. Click Finish.
-9. Have fun. Write some specifications. Close the TLA+ Toolbox when you're done, and the container will shut down. Your files will be in the path on the host where you started.
-10. __Reenable X access control:__ `$ xhost -`
+3. `$ cd` to a path where you want to write some .tla files.
+4. ``$ docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:`pwd` -e DISPLAY=$DISPLAY kimada/tlatoolbox``
+5. You should see the TLA+ splash screen and eventually the TLA Toolbox.
+6. Use the TLA Toolbox menu: File/Open Spec/Add New Spec.
+7. Enter /root/specs/{foo}.tla as the root-module name. The specification name should auto-complete to {foo}. Click Finish.
+8. Have fun. Write some specifications. Close the TLA+ Toolbox when you're done, and the container will shut down. Your files will be in the path on the host where you started.
+9. __Reenable X access control:__ `$ xhost -`
 
 ## WHAT JUST HAPPENED?
 * Docker mounted the host's X socket in the continer as the container's X socket; this allows the container's GUI to pass back up to the host.

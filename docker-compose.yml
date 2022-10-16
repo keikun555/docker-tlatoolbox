@@ -1,11 +1,13 @@
-# sudo docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:`pwd` -e DISPLAY=$DISPLAY keikun555/docker-tlatoolbox
+# sudo docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:/root/specs -e DISPLAY=$DISPLAY kimada/docker-tlatoolbox
 version: "3.9"
 services:
   tlatoolbox:
+    container_name: tlatoolbox
     build: .
     environment:
       DISPLAY: $DISPLAY
     volumes:
-      - ./specs:/root/specs
+      - .:/root/specs
       - /tmp/.X11-unix:/tmp/.X11-unix
     network_mode: "host"
+    image: kimada/tlatoolbox:1.7.1-latest
