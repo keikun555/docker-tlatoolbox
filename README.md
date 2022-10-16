@@ -22,7 +22,7 @@ Visit [The TLA Home Page](http://research.microsoft.com/en-us/um/people/lamport/
 1. Make sure you're on a system running [X](https://en.wikipedia.org/wiki/X_Window_System).
 2. Disable X access control (don't do this on a public-facing machine): `$ xhost +`
 3. `$ cd` to a path where you want to write some .tla files.
-4. ``$ docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:`pwd` -e DISPLAY=$DISPLAY kimada/tlatoolbox``
+4. ``$ docker run -d -v /tmp/.X11-unix:/tmp/.X11-unix -v `pwd`:`pwd` -e DISPLAY=$DISPLAY kimada/tlatoolbox:1.7.1-latest``
 5. You should see the TLA+ splash screen and eventually the TLA Toolbox.
 6. Use the TLA Toolbox menu: File/Open Spec/Add New Spec.
 7. Enter /root/specs/{foo}.tla as the root-module name. The specification name should auto-complete to {foo}. Click Finish.
